@@ -6,8 +6,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js">
 
         </script>
-        <script type="text/javascript" src="src/main.js"></script>
-        <script type="text/javascript" src="src/test.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.js">
+
+        </script>
+        <script type="text/javascript" src="src/toySimulator.js"></script>
+        <script type="text/javascript" src="src/toySimulator.spec.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.3.4/mocha.min.css">
         <title>Toy Robot Simulator</title>
     </head>
@@ -15,9 +18,9 @@
         <h1>Please see console for result </h1>
         <label for="">
             <input type="text" id="input-field" onkeydown="if (event.keyCode == 13) process.input(this.value);">
-            Place command in input field
+            Place command in input field and press enter
         </label>
-        <button type="button" name="button" onclick="mocha.run();" style="display:block; margin-top: 80px;">Click to run tests</button>
+        <button type="button" name="button" onclick="mocha.run();" style="display:block; margin-top: 80px;">Run Tests</button>
         <div id="mocha"></div>
     </body>
 
