@@ -4,7 +4,7 @@ A toy robot simulator written in javascript
 
 ## Installation
 
-Open index.html in browser and open console to see results.
+Open index.html in browser, place command in input field and press enter.
 
 ## Instructions
 
