@@ -9,17 +9,21 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.js">
 
         </script>
-        <script type="text/javascript" src="src/toySimulator.js"></script>
+        <script type="text/javascript" src="src/toySimulator-init.js"></script>
         <script type="text/javascript" src="src/toySimulator.spec.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.3.4/mocha.min.css">
+        <link rel="stylesheet" href="src/style.css">
         <title>Toy Robot Simulator</title>
     </head>
     <body>
-        <h1>Please see console for result </h1>
-        <label for="">
-            <input type="text" id="input-field" onkeydown="if (event.keyCode == 13) process.input(this.value);">
-            Place command in input field and press enter
-        </label>
+        <div class="form">
+            <label for="">
+                <input type="text" id="input-field" onkeydown="if (event.keyCode == 13) input.command(this.value);">
+                Place command in input field and press enter
+            </label>
+        </div>
+
+        <p id="result"></p>
         <button type="button" name="button" onclick="mocha.run();" style="display:block; margin-top: 80px;">Run Tests</button>
         <div id="mocha"></div>
     </body>

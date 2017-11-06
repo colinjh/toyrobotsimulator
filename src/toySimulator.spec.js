@@ -2,26 +2,30 @@ mocha.setup('bdd');
 var assert = chai.assert;
 var should = chai.should();
 var expect = chai.expect;
-var toySimulator = require(['./src/toySimulator.js']);
+var toySimulator = require(['./src/toySimulator-init.js']);
 
 
 
-describe('Toy Simulator Tests', function() {
-  it('file should exist', function () {
-    expect(toySimulator).to.exist
+describe('Toy Simulator Tests ', function() {
+  describe('Toy Simulator Tests - Init', function() {
+    it('file should exist', function () {
+      expect(toySimulator).to.exist
+    });
+    it('should be a function', function() {
+      expect(toySimulator).to.be.a('function');
+    });
+    it('compass directions is an array', function() {
+      expect(allCompassPos).to.be.an('array');
+    });
+
   });
-  it('should be a function', function() {
-    expect(toySimulator).to.be.a('function');
+  describe('Toy Simulator Test - Input', function() {
+      it('should return on false on negative co-ordinate', function(){
+        expect(input.tableBoundry(-1)).to.be.false;
+      })
   });
-  it('variables start as undefined', function() {
-    should.equal(currentCompassPos, undefined);
-    should.equal(current_x, undefined);
-    should.equal(current_x, undefined);
-  })
-  it('max values should be 4', function() {
-    should.equal(max_x, 4);
-    should.equal(max_y, 4);
-  })
+
+
 });
 
 describe('Demo Tests', function() {
@@ -29,7 +33,8 @@ describe('Demo Tests', function() {
   describe('Test A - PLACE 0,0,NORTH', function() {
 
     it('Robot should be facing north and placement true', function() {
-      process.input('place 0,0,NORTH');
+      var placement = false;
+      input.command('place 0,0,NORTH');
       expect(currentCompassPos).to.equal('NORTH');
       expect(current_x).to.equal(0);
       expect(current_y).to.equal(0);
@@ -50,7 +55,7 @@ describe('Demo Tests', function() {
   describe('Test B - PLACE 0,0,NORTH', function() {
 
     it('Robot should be facing north and placement true', function() {
-      process.input('place 0,0,NORTH');
+      input.command('place 0,0,NORTH');
       expect(currentCompassPos).to.equal('NORTH');
       expect(current_x).to.equal(0);
       expect(current_y).to.equal(0);
@@ -71,7 +76,7 @@ describe('Demo Tests', function() {
   describe('Test C - PLACE 1,2,EAST', function() {
 
     it('Robot should be facing east and placement true', function() {
-      process.input('place 1,2,EAST');
+      input.command('place 1,2,EAST');
       expect(currentCompassPos).to.equal('EAST');
       expect(current_x).to.equal(1);
       expect(current_y).to.equal(2);
