@@ -33,7 +33,6 @@ describe('Demo Tests', function() {
   describe('Test A - PLACE 0,0,NORTH', function() {
 
     it('Robot should be facing north and placement true', function() {
-      var placement = false;
       input.command('place 0,0,NORTH');
       expect(currentCompassPos).to.equal('NORTH');
       expect(current_x).to.equal(0);
